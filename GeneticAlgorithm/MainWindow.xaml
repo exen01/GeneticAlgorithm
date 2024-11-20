@@ -1,0 +1,31 @@
+﻿<Window x:Class="GeneticAlgorithm.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:oxy="http://oxyplot.org/wpf"
+        Title="Генетический алгоритм" Height="450" Width="800">
+    <Grid>
+        <StackPanel Orientation="Vertical" Margin="10">
+            <TextBlock Text="Параметры генетического алгоритма для оптимизации функции f(x) = 7 - 45x - 63x^2 + x^3 в интервале x ϵ [-10, 53]:" FontWeight="Bold" />
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Размер популяции:" VerticalAlignment="Center" />
+                <TextBox x:Name="PopulationSizeTextBox" Width="100" Margin="5" Text="20" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Количество поколений:" VerticalAlignment="Center" />
+                <TextBox x:Name="GenerationsTextBox" Width="100" Margin="5" Text="100" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Вероятность кроссовера:" VerticalAlignment="Center" />
+                <TextBox x:Name="CrossoverRateTextBox" Width="100" Margin="5" Text="0.7" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Вероятность мутации:" VerticalAlignment="Center" />
+                <TextBox x:Name="MutationRateTextBox" Width="100" Margin="5" Text="0.01" />
+            </StackPanel>
+            <Button x:Name="RunAlgorithmButton" Content="Запустить алгоритм" Margin="5" Click="RunAlgorithmButton_Click" />
+            <TextBlock Text="Результаты:" FontWeight="Bold" Margin="5" />
+            <TextBox x:Name="ResultsTextBox" Height="100" Margin="5" IsReadOnly="True" />
+            <oxy:PlotView x:Name="FunctionPlot" Height="400" Margin="5" />
+        </StackPanel>
+    </Grid>
+</Window>
